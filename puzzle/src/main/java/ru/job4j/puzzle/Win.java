@@ -3,13 +3,9 @@ package ru.job4j.puzzle;
 
 public class Win {
     public static boolean check(int[][] board) {
-        int[] diagonal = new int[board.length];
         boolean result = false;
         for (int i = 0; i < board.length; i++) {
-            diagonal[i] = board[i][i];
-        }
-        for (int i = 0; i < board.length; i++) {
-            if (diagonal[i] == 1 && (isHorizontalWin(board, i) || isVerticalWin(board, i))) {
+            if (board[i][i] == 1 && (isHorizontalWin(board, i) || isVerticalWin(board, i))) {
                 result = true;
                 break;
             }
